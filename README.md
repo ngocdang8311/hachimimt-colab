@@ -113,17 +113,21 @@ GPU nhiều lần (xem mục Tốc độ). Hướng dẫn chi tiết nằm trong
 
 ## Các mô hình có sẵn
 
-App cho chọn 4 mô hình (mặc định **HachimiMT-60**, tự tải khi cần):
+App cho chọn 4 mô hình; khi mở app sẵn chọn **HachimiMT-60**, đổi sang model khác
+bất cứ lúc nào (tự tải khi cần). Bốn mô hình **ngang hàng** — không có cái nào "tốt
+nhất" cho mọi trường hợp; mỗi cái ra giọng văn hơi khác và mạnh/yếu ở chỗ khác nhau:
 
-| Mô hình | Cỡ | Vai trò |
+| Mô hình | Cỡ | Đặc điểm |
 |---|---|---|
-| **HachimiMT-60** ⭐ | 57 MB | Mặc định — cân bằng chất lượng / tốc độ, dùng cho hầu hết truyện |
-| **HachimiMT-30** | 35 MB | Nhỏ nhất, nhanh nhất — hợp máy yếu / muốn tốc độ tối đa |
-| **MoxhiMT-60** | 58 MB | Biến thể cùng cỡ, giọng văn khác đôi chút để đối chiếu |
-| **MoxhiMT-30** | 38 MB | Biến thể nhỏ, phương án dự phòng nhẹ |
+| **HachimiMT-60** | 57 MB | Bản 60M dòng HachimiMT — giọng văn của riêng nó |
+| **HachimiMT-30** | 35 MB | Bản 30M, nhỏ & nhanh nhất — hợp máy yếu / cần tốc độ |
+| **MoxhiMT-60** | 58 MB | Bản 60M dòng MoxhiMT — giọng văn khác để đối chiếu |
+| **MoxhiMT-30** | 38 MB | Bản 30M dòng MoxhiMT — nhỏ, nhanh, giọng văn riêng |
 
-Cứ thử vài mô hình trên cùng một đoạn rồi chọn cái hợp gu nhất — mỗi mô hình ra
-giọng văn hơi khác nhau.
+> Không có model "đỉnh" tuyệt đối: ví dụ ở khoản **giữ tên riêng / xưng hô nhất
+> quán**, mấy bản kia có lúc ổn định hơn HachimiMT-60; ngược lại HachimiMT-60 có thể
+> hợp hơn ở đoạn khác. **Cách tốt nhất là thử cả 4 trên cùng một đoạn truyện của bạn
+> rồi chọn cái hợp gu nhất.**
 
 Repo mô hình trên Hugging Face:
 [HachimiMT-60](https://huggingface.co/ngocdang83/HachimiMT-60-zh-vi) ·

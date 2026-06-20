@@ -84,7 +84,8 @@ khác nhau. Chọn đúng theo nhu cầu:
    ⚠️ **Tránh P100** (không hỗ trợ kiểu tính INT8 của mô hình) và **TPU**.
 3. **`Run All`** → mở link `*.gradio.live` ở cell cuối.
 
-Kaggle T4×2 tận dụng **cả 2 GPU** nên nhanh hơn Colab 1 GPU khoảng 1,5×.
+Kaggle T4×2 tận dụng **cả 2 GPU** (và máy ảo Kaggle cũng khỏe hơn Colab) nên đo
+thực **nhanh hơn Colab khoảng 2 lần**.
 
 ### Cách 3 — Cài về máy (chạy offline bằng CPU)
 

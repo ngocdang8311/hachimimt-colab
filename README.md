@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/hachimimt-logo.png" alt="HachimiMT logo" width="180">
+</p>
+
 # HachimiMT — Dịch truyện Trung → Việt bằng AI, chạy miễn phí trên Colab / Kaggle
 
 > **Dịch truyện tiên hiệp / huyền huyễn / web-novel Trung → Việt** bằng mô hình

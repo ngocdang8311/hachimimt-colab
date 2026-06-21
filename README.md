@@ -106,7 +106,7 @@ GPU nhiều lần (xem mục Tốc độ). Hướng dẫn chi tiết nằm trong
 | Môi trường | Tốc độ đo thật | Bộ truyện 2,4 triệu chữ |
 |---|---|---|
 | **Colab T4 (1 GPU)** | ~40.000 chữ Hán/giây (beam 1) · ~28.000 (beam 2) | ~1 phút (beam 1) · ~1 phút 30 giây (beam 2) |
-| **Kaggle T4 × 2 (2 GPU)** | ~52.000 chữ/giây (beam 1) · ~42.000 (beam 2) | ~58 giây (beam 2) |
+| **Kaggle T4 × 2 (2 GPU)** | ~52.000 chữ/giây (beam 2, đo mới trên file 2,84M); beam 1 thường nhanh hơn, cần đo lại trên runtime hiện tại | ~55 giây cho 2,84M chữ (beam 2) |
 | **CPU (bản máy / demo)** | ~500 chữ/giây | chậm — chỉ nên dùng cho đoạn ngắn |
 
 > **GPU nhanh hơn CPU hàng chục lần.** Vì vậy luôn **bật GPU** trên Colab/Kaggle.

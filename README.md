@@ -47,7 +47,7 @@ khác nhau. Chọn đúng theo nhu cầu:
 | **Chạy offline, tức thì** | ✅ Có, không cần mạng | ⚠️ Cần GPU (Colab/Kaggle) để nhanh; bản máy/CPU chậm hơn |
 | **Nhất quán tên riêng** | ✅ **Bạn pin tên trong từ điển → cố định mãi** | ⚠️ Tên hiếm có thể dịch lệch giữa các đoạn |
 | **Tùy biến từ điển** | ✅ Sửa, thêm, ghi đè thoải mái | ❌ Mô hình cố định, không sửa từ điển |
-| **Tốc độ** | Tức thì (tra bảng) | ~27.000 chữ/giây (1 GPU) — rất nhanh, nhưng cần khởi động |
+| **Tốc độ** | Tức thì (tra bảng) | ~40.000 chữ/giây (Colab T4, beam 1) — rất nhanh, nhưng cần khởi động |
 
 **Tóm lại:**
 - Muốn **đọc nhanh, mượt, đỡ "lai Hán-Việt"** → HachimiMT thắng về độ trôi chảy.
@@ -88,8 +88,9 @@ khác nhau. Chọn đúng theo nhu cầu:
    ⚠️ **Tránh P100** (không hỗ trợ kiểu tính INT8 của mô hình) và **TPU**.
 3. **`Run All`** → mở link `*.gradio.live` ở cell cuối.
 
-Kaggle T4×2 tận dụng **cả 2 GPU** (và máy ảo Kaggle cũng khỏe hơn Colab) nên đo
-thực **nhanh hơn Colab khoảng 2 lần**.
+Kaggle T4×2 tận dụng **cả 2 GPU** nên vẫn nhanh nhất khi dịch file dài. Colab T4
+1 GPU sau tối ưu `window=16` đã tiệm cận hơn: beam 2 chậm hơn Kaggle T4×2 khoảng
+1,9×, còn so với Kaggle ép 1 GPU chỉ chậm hơn khoảng 14%.
 
 ### Cách 3 — Cài về máy (chạy offline bằng CPU)
 
@@ -102,9 +103,9 @@ GPU nhiều lần (xem mục Tốc độ). Hướng dẫn chi tiết nằm trong
 
 ## Tốc độ (đo thật)
 
-| Môi trường | Tốc độ (beam 1, nhanh) | Bộ truyện 2,4 triệu chữ |
+| Môi trường | Tốc độ đo thật | Bộ truyện 2,4 triệu chữ |
 |---|---|---|
-| **Colab T4 (1 GPU)** | ~27.000 chữ Hán/giây | ~1 phút 30 giây |
+| **Colab T4 (1 GPU)** | ~40.000 chữ Hán/giây (beam 1) · ~28.000 (beam 2) | ~1 phút (beam 1) · ~1 phút 30 giây (beam 2) |
 | **Kaggle T4 × 2 (2 GPU)** | ~52.000 chữ/giây (beam 1) · ~42.000 (beam 2) | ~58 giây (beam 2) |
 | **CPU (bản máy / demo)** | ~500 chữ/giây | chậm — chỉ nên dùng cho đoạn ngắn |
 
@@ -112,7 +113,9 @@ GPU nhiều lần (xem mục Tốc độ). Hướng dẫn chi tiết nằm trong
 > Bản demo HF Space chạy CPU dùng chung nên chỉ hợp dán thử vài đoạn; muốn dịch
 > nguyên bộ thì dùng Colab/Kaggle (GPU) hoặc cài về máy.
 >
-> *beam* càng cao dịch càng kỹ nhưng càng chậm; mặc định để 1–2 cho nhanh.
+> *beam* càng cao dịch càng kỹ nhưng càng chậm; mặc định để 1–2 cho nhanh. Notebook
+> Colab đặt sẵn `HACHIMIMT_CT2_WINDOW_MULTIPLIER=16`, nhanh hơn window cũ khoảng
+> 25–31% trên T4 x1.
 
 ---
 

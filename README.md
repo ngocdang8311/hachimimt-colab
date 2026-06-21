@@ -106,7 +106,7 @@ GPU nhiều lần (xem mục Tốc độ). Hướng dẫn chi tiết nằm trong
 | Môi trường | Tốc độ đo thật | Bộ truyện 2,4 triệu chữ |
 |---|---|---|
 | **Colab T4 (1 GPU)** | ~40.000 chữ Hán/giây (beam 1) · ~28.000 (beam 2) | ~1 phút (beam 1) · ~1 phút 30 giây (beam 2) |
-| **Kaggle T4 × 2 (2 GPU)** | ~71.000 chữ/giây (beam 1) · ~52.000 (beam 2) | ~40 giây (beam 1) · ~55 giây (beam 2) cho 2,84M chữ |
+| **Kaggle T4 × 2 (2 GPU)** | ~81.000 chữ/giây (beam 1) · ~54.000 (beam 2) | ~35 giây (beam 1) · ~52 giây (beam 2) cho 2,84M chữ |
 | **CPU (bản máy / demo)** | ~500 chữ/giây | chậm — chỉ nên dùng cho đoạn ngắn |
 
 > **GPU nhanh hơn CPU hàng chục lần.** Vì vậy luôn **bật GPU** trên Colab/Kaggle.
@@ -115,7 +115,8 @@ GPU nhiều lần (xem mục Tốc độ). Hướng dẫn chi tiết nằm trong
 >
 > *beam* càng cao dịch càng kỹ nhưng càng chậm; mặc định để 1–2 cho nhanh. Notebook
 > Colab đặt sẵn `HACHIMIMT_CT2_WINDOW_MULTIPLIER=16`, nhanh hơn window cũ khoảng
-> 25–31% trên T4 x1.
+> 25–31% trên T4 x1. Kaggle T4 x2 đặt window 8; nhờ auto multi-GPU, window hiệu dụng
+> là 32x để giữ cả hai GPU bận hơn trên file dài.
 
 ---
 
